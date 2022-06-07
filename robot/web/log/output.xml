@@ -1,108 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0 (Python 3.10.4 on win32)" generated="20220525 17:02:30.525" rpa="false" schemaversion="3">
-<suite id="s1" name="radioButton" source="C:\Curso_Robot\robot\web\tests\radioButton.robot">
-<test id="s1-t1" name="Selecionando por ID" line="9">
+<robot generator="Robot 5.0 (Python 3.10.4 on win32)" generated="20220607 11:27:09.091" rpa="false" schemaversion="3">
+<suite id="s1" name="Login Form" source="C:\Curso_Robot\robot\web\tests\login_form.robot">
+<test id="s1-t1" name="Login com sucesso" line="9">
 <kw name="Nova sessão" library="base" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${url}</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220525 17:02:30.720" level="INFO">Opening browser 'chrome' to base url 'https://training-wheels-protocol.herokuapp.com/'.</msg>
-<status status="PASS" starttime="20220525 17:02:30.720" endtime="20220525 17:02:46.226"/>
+<msg timestamp="20220607 11:27:09.281" level="INFO">Opening browser 'chrome' to base url 'https://training-wheels-protocol.herokuapp.com/'.</msg>
+<status status="PASS" starttime="20220607 11:27:09.281" endtime="20220607 11:27:23.817"/>
 </kw>
-<status status="PASS" starttime="20220525 17:02:30.720" endtime="20220525 17:02:46.226"/>
+<status status="PASS" starttime="20220607 11:27:09.281" endtime="20220607 11:27:23.817"/>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
-<arg>${url}/radios</arg>
+<arg>${url}/login</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20220525 17:02:46.228" level="INFO">Opening url 'https://training-wheels-protocol.herokuapp.com//radios'</msg>
-<status status="PASS" starttime="20220525 17:02:46.228" endtime="20220525 17:02:46.671"/>
+<msg timestamp="20220607 11:27:23.818" level="INFO">Opening url 'https://training-wheels-protocol.herokuapp.com//login'</msg>
+<status status="PASS" starttime="20220607 11:27:23.817" endtime="20220607 11:27:24.191"/>
 </kw>
-<kw name="Select Radio Button" library="SeleniumLibrary">
-<arg>movies</arg>
-<arg>cap</arg>
-<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
-<msg timestamp="20220525 17:02:46.673" level="INFO">Selecting 'cap' from radio button 'movies'.</msg>
-<status status="PASS" starttime="20220525 17:02:46.672" endtime="20220525 17:02:46.722"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>css:input[name=username]</arg>
+<arg>stark</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220607 11:27:24.192" level="INFO">Typing text 'stark' into text field 'css:input[name=username]'.</msg>
+<status status="PASS" starttime="20220607 11:27:24.192" endtime="20220607 11:27:24.247"/>
 </kw>
-<kw name="Radio Button Should Be Set To" library="SeleniumLibrary">
-<arg>movies</arg>
-<arg>cap</arg>
-<doc>Verifies radio button group ``group_name`` is set to ``value``.</doc>
-<msg timestamp="20220525 17:02:46.722" level="INFO">Verifying radio button 'movies' has selection 'cap'.</msg>
-<status status="PASS" starttime="20220525 17:02:46.722" endtime="20220525 17:02:46.740"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>css:input[name=password]</arg>
+<arg>jarvis!</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220607 11:27:24.248" level="INFO">Typing text 'jarvis!' into text field 'css:input[name=password]'.</msg>
+<status status="PASS" starttime="20220607 11:27:24.248" endtime="20220607 11:27:24.315"/>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220525 17:02:48.748" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20220525 17:02:46.740" endtime="20220525 17:02:48.748"/>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>class:btn-login</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220607 11:27:24.316" level="INFO">Clicking element 'class:btn-login'.</msg>
+<status status="PASS" starttime="20220607 11:27:24.316" endtime="20220607 11:27:24.717"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Olá, Tony Stark. Você acessou a área logada!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220607 11:27:24.729" level="INFO">Current page contains text 'Olá, Tony Stark. Você acessou a área logada!'.</msg>
+<status status="PASS" starttime="20220607 11:27:24.718" endtime="20220607 11:27:24.729"/>
 </kw>
 <kw name="Encerra sessão" library="base" type="TEARDOWN">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220525 17:02:48.748" endtime="20220525 17:02:51.073"/>
+<status status="PASS" starttime="20220607 11:27:24.730" endtime="20220607 11:27:26.994"/>
 </kw>
-<status status="PASS" starttime="20220525 17:02:48.748" endtime="20220525 17:02:51.073"/>
+<status status="PASS" starttime="20220607 11:27:24.730" endtime="20220607 11:27:26.994"/>
 </kw>
-<status status="PASS" starttime="20220525 17:02:30.720" endtime="20220525 17:02:51.073"/>
+<status status="PASS" starttime="20220607 11:27:09.281" endtime="20220607 11:27:26.994"/>
 </test>
-<test id="s1-t2" name="Selecionando por value" line="17">
-<kw name="Nova sessão" library="base" type="SETUP">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>${url}</arg>
-<arg>chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220525 17:02:51.073" level="INFO">Opening browser 'chrome' to base url 'https://training-wheels-protocol.herokuapp.com/'.</msg>
-<status status="PASS" starttime="20220525 17:02:51.073" endtime="20220525 17:03:00.104"/>
-</kw>
-<status status="PASS" starttime="20220525 17:02:51.073" endtime="20220525 17:03:00.104"/>
-</kw>
-<kw name="Go To" library="SeleniumLibrary">
-<arg>${url}/radios</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20220525 17:03:00.105" level="INFO">Opening url 'https://training-wheels-protocol.herokuapp.com//radios'</msg>
-<status status="PASS" starttime="20220525 17:03:00.105" endtime="20220525 17:03:00.445"/>
-</kw>
-<kw name="Select Radio Button" library="SeleniumLibrary">
-<arg>movies</arg>
-<arg>guardians</arg>
-<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
-<msg timestamp="20220525 17:03:00.446" level="INFO">Selecting 'guardians' from radio button 'movies'.</msg>
-<status status="PASS" starttime="20220525 17:03:00.446" endtime="20220525 17:03:00.488"/>
-</kw>
-<kw name="Radio Button Should Be Set To" library="SeleniumLibrary">
-<arg>movies</arg>
-<arg>guardians</arg>
-<doc>Verifies radio button group ``group_name`` is set to ``value``.</doc>
-<msg timestamp="20220525 17:03:00.489" level="INFO">Verifying radio button 'movies' has selection 'guardians'.</msg>
-<status status="PASS" starttime="20220525 17:03:00.489" endtime="20220525 17:03:00.528"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220525 17:03:02.531" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20220525 17:03:00.528" endtime="20220525 17:03:02.531"/>
-</kw>
-<kw name="Encerra sessão" library="base" type="TEARDOWN">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220525 17:03:02.531" endtime="20220525 17:03:04.803"/>
-</kw>
-<status status="PASS" starttime="20220525 17:03:02.531" endtime="20220525 17:03:04.804"/>
-</kw>
-<status status="PASS" starttime="20220525 17:02:51.073" endtime="20220525 17:03:04.805"/>
-</test>
-<status status="PASS" starttime="20220525 17:02:30.525" endtime="20220525 17:03:04.806"/>
+<status status="PASS" starttime="20220607 11:27:09.091" endtime="20220607 11:27:26.994"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="2" fail="0" skip="0" id="s1" name="radioButton">radioButton</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Login Form">Login Form</stat>
 </suite>
 </statistics>
 <errors>
